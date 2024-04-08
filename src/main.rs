@@ -29,6 +29,10 @@ fn main() {
 
                     previous_command = None;
                 }
+                "help" => {
+                    print!("This is a shell, why are you asking for help\n");
+                    previous_command = None;
+                }
                 "exit" => return,
                 command => {
                     let stdin = previous_command.map_or(Stdio::inherit(), |output: Child| {
